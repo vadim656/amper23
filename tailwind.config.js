@@ -1,4 +1,4 @@
-import nuxtConfig from './nuxt.config'
+
 export default {
   theme: {},
   plugins: [],
@@ -17,10 +17,8 @@ export default {
     `!./**/*.{spec,test}.*` // mind the ! at the start
   ],
   purge: {
-    content (defaultContents) {
-      return defaultContents
-        .map(path => join(nuxtConfig.srcDir, path))
-        .map(file => file.replace('.js', '.ts'))
-    }
-  }
+    content(contentDefaults) {
+      return contentDefaults.map((file) => file.replace('.js', '.ts'))
+    },
+  },
 }

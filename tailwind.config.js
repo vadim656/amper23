@@ -1,3 +1,4 @@
+import nuxtConfig from './nuxt.config'
 export default {
   theme: {},
   plugins: [],
@@ -14,5 +15,12 @@ export default {
     `./error.{js,ts,vue}`,
     `./app.config.{js,ts}`,
     `!./**/*.{spec,test}.*` // mind the ! at the start
-  ]
+  ],
+  purge: {
+    content (defaultContents) {
+      return defaultContents
+        .map(path => join(nuxtConfig.srcDir, path))
+        .map(file => file.replace('.js', '.ts'))
+    }
+  }
 }

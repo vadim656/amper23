@@ -1,8 +1,11 @@
 <template>
-  <div class="flex justify-center w-full py-20 text-red-500 text-4xl">
+  <div >
     amper test2
+    <HiT/>
   </div>
 </template>
 <script setup>
-import '@/assets/css/tailwind.css'
+import HiT from './components/hiT.vue';
+
+
 </script>
